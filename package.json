@@ -1,0 +1,13 @@
+{
+  "name": "webpack-training",
+  "version": "0.0.0",
+  "description": "just for training",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Emmanuel Maldonado",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.13.0"
+  }
+}
