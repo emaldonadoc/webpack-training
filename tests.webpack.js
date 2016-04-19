@@ -6,8 +6,6 @@ require('core-js/es5');
 var context = require.context('./app', true, /-test\.js$/);
 context.keys().forEach(context);
 
-
-/*
 // Create a Webpack require context so we can dynamically require our
 // project's modules. Exclude test files in this context.
 var projectContext = require.context('./app/', true, /^((?!__tests__).)*.js?$/);
@@ -19,4 +17,3 @@ beforeEach(() => {
   // Remove our modules from the require cache before each test case.
   projectModuleIds.forEach(id => delete require.cache[id]);
 });
-*/
