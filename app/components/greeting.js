@@ -7,7 +7,7 @@ export default React.createClass({
   render: function(){
     return(
       <div className="greeting">
-        Helo,{this.props.name}!
+        <p>Helo,{this.props.name}!</p>
         <button onClick={this.buttonClick} type="button"> Click Me! </button>
       </div>
     );
