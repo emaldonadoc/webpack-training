@@ -23,5 +23,5 @@ module.exports = {
         loader: "file?name=[name].[ext]",
       }
     ],
-  }
-  }
+    }
+}
