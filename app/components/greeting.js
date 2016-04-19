@@ -2,7 +2,6 @@ import React from "react";
 
 export default React.createClass({
   buttonClick: function(e){
-    console.log(['Click on button', e.currentTarget]);
     e.currentTarget.setAttribute("disabled", "disabled");
   },
   render: function(){
