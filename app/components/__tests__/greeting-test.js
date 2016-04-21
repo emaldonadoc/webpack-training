@@ -20,7 +20,6 @@ describe('GreetingSpec',() =>{
 
     //then
     expect(element).toBeTruthy();
-    expect(ReactDom.findDOMNode(buttons[0]).getAttribute('disabled')).toEqual('disabled');
     expect(GreetingDispatcher.dispatch).toHaveBeenCalled();
   });
 });
