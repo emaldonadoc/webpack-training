@@ -1,5 +1,5 @@
 import React from "react";
-import GreetingDispatcher from "../dispatchers/greetingDispatcher"
+import GreetingDispatcher from "../../dispatchers/greetingDispatcher"
 
 export default React.createClass({
   callActions: function(options){

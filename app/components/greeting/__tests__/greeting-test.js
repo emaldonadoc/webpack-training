@@ -2,7 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import TestUtils from 'react/lib/ReactTestUtils';
 import Greeting from '../greeting';
-import GreetingDispatcher from '../../dispatchers/greetingDispatcher';
+import GreetingDispatcher from '../../../dispatchers/greetingDispatcher';
 
 describe('GreetingSpec',() =>{
 
