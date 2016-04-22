@@ -23,13 +23,14 @@
     "karma-phantomjs-launcher": "^0.2.3",
     "karma-webpack": "^1.7.0",
     "phantomjs": "^2.1.7",
+    "shrinkwrap": "^0.4.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "flux": "^2.1.1",
-    "react": "^15.0.1",
+    "react": "^0.14.0",
     "react-datagrid": "^2.0.2",
-    "react-dom": "^15.0.1"
+    "react-dom": "^0.14.0"
   }
 }

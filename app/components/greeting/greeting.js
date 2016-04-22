@@ -1,21 +1,29 @@
-import React from "react";
+import React,{ Component} from "react";
 import GreetingDispatcher from "../../dispatchers/greetingDispatcher"
 
-export default React.createClass({
-  callActions: function(options){
+class Greeting extends Component{
+
+  constructor(props) {
+    super(props);
+  }
+
+  /*callActions(options){
     GreetingDispatcher.dispatch(options);
-  },
-  addUser: function(e){
-    this.callActions({
+  }*/
+
+   addUser(e){
+    GreetingDispatcher.dispatch({
       action: 'NEW_USER'
     });
-  },
-  removeUser: function(e){
-    this.callActions({
+  }
+
+   removeUser(e){
+     GreetingDispatcher.dispatch({
       action: 'REMOVE_USER'
     });
-  },
-  render: function(){
+  }
+
+  render() {
     return(
       <div className="greeting">
         <p>Helo,{this.props.name}!</p>
@@ -24,4 +32,6 @@ export default React.createClass({
       </div>
     );
   }
-});
+}
+
+module.exports = Greeting;

@@ -13,7 +13,7 @@ describe('GreetingSpec',() =>{
   it('renders', ()=>{
     //given
     var element = TestUtils.renderIntoDocument(<Greeting name="World"/>);
-    var buttons=TestUtils.scryRenderedDOMComponentsWithTag(element, 'button');
+    var buttons = TestUtils.scryRenderedDOMComponentsWithTag(element, 'button');
 
     //when
     TestUtils.Simulate.click(buttons[0]);
