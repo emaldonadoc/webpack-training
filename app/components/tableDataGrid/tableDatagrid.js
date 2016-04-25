@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
-import DataGrid from 'react-datagrid';
-import css from 'react-datagrid/index.css';
+import ReactDataGrid from 'react-data-grid';
 
 let columns = [
   {name: 'index', title: '#', width: 50},
@@ -18,12 +17,25 @@ class TableDatagrid extends Component {
   render(){
     return(
       <div>
-        <style>{css}</style>
         <DataGrid
           idProperty='id'
           dataSource={this.props.renderData}
           columns={columns}
         />
+
+
+        <ReactDataGrid
+              enableCellSelect={true}
+              columns={this.props.renderData}
+              rowGetter={this.props.getRowAt}
+              rowsCount={this.props.size}
+              onGridRowsUpdated={this.props.handleGridRowsUpdated}
+              toolbar={<Toolbar onAddRow={this.props.handleAddRow}/>}
+              enableRowSelect={true}
+              rowHeight={50}
+              minHeight={600}
+              rowScrollTimeout={200}
+              />
       </div>
     );
   }
