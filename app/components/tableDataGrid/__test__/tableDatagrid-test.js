@@ -5,31 +5,25 @@ import TableDatagrid from '../tableDatagrid';
 describe('Datagrid Spec',()=>{
 
   it('render datagrid element',()=>{
-    var datagrid = TestUtils.renderIntoDocument(<TableDatagrid />);
+      let columns = [
+          { key: 'id', name: 'ID', locked : true },
+          { key: 'task', name: 'Title', width: 200, locked : true },
+          { key: 'priority', name: 'Priority', width: 200 }
+      ];
+
+      let rowGetter =[{
+        id: 1,
+        task: 'Task 1',
+        complete: 100,
+        priority : 'Critical',
+    }];
+
+    var datagrid = TestUtils.renderIntoDocument(<TableDatagrid  columns={columns} rowGetter={rowGetter} rowsCount={rowGetter.length} minHeight={500} />);
 
     expect(datagrid).toBeTruthy();
+    var headers = TestUtils.scryRenderedDOMComponentsWithClass(datagrid, 'widget-HeaderCell__value');
+     var rows = TestUtils.scryRenderedDOMComponentsWithClass(datagrid, 'react-grid-Row');
+    expect( headers.length ).toEqual(3);
+    expect( rows.length ).toEqual(1);
   });
-
-  it('render datagrid with data', ()=>{
-
-    //given
-    let data = [
-  		{ id: 0, index: 1, firstName: 'John', city: 'London', email: 'jon@gmail.com'},
-      { id: 1, index: 1, firstName: 'John', city: 'London', email: 'jon@gmail.com'},
-      { id: 2, index: 1, firstName: 'John', city: 'London', email: 'jon@gmail.com'},
-      { id: 3, index: 1, firstName: 'John', city: 'London', email: 'jon@gmail.com'}
-    ];
-
-    //when
-      var datagrid = TestUtils.renderIntoDocument( <TableDatagrid renderData={data} />)
-      var headers = TestUtils.scryRenderedDOMComponentsWithClass(datagrid, 'z-column-header');
-      var rows = TestUtils.scryRenderedDOMComponentsWithClass(datagrid, 'z-row');
-
-    //then
-      expect( headers.length ).toEqual(5);
-      expect( rows.length ).toEqual(4);
-
-  });
-
-
 });

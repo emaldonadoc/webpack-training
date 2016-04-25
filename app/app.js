@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDataGrid from 'react-data-grid';
 import ReactDOM from "react-dom";
+import TableDatagrid from './components/tableDatagrid/tableDatagrid';
 import Style from 'react-data-grid/themes/react-data-grid.css';
 
 //helper to generate a random date
@@ -29,59 +30,48 @@ var rowGetter = function(i){
 
 //Columns definition
 var columns = [
-{
-  key: 'id',
-  name: 'ID',
-  locked : true
-},
-{
-  key: 'task',
-  name: 'Title',
-  width: 200,
-  locked : true
-},
-{
-  key: 'priority',
-  name: 'Priority',
-  width: 200
-},
-{
-  key: 'issueType',
-  name: 'Issue Type',
-  width: 200
-},
-{
-  key: 'complete',
-  name: '% Complete',
-  width: 200
-},
-{
-  key: 'startDate',
-  name: 'Start Date',
-  width: 200
-},
-{
-  key: 'completeDate',
-  name: 'Expected Complete',
-  width: 200
-},
-{
-  key: 'completeDate',
-  name: 'Expected Complete',
-  width: 200
-}
+    {
+      key: 'id',
+      name: 'ID',
+      locked : true
+    },
+    {
+      key: 'task',
+      name: 'Title',
+      width: 200,
+      locked : true
+    },
+    {
+      key: 'priority',
+      name: 'Priority',
+      width: 200
+    },
+    {
+      key: 'issueType',
+      name: 'Issue Type',
+      width: 200
+    },
+    {
+      key: 'complete',
+      name: '% Complete',
+      width: 200
+    },
+    {
+      key: 'startDate',
+      name: 'Start Date',
+      width: 200
+    },
+    {
+      key: 'completeDate',
+      name: 'Expected Complete',
+      width: 200
+    },
+    {
+      key: 'completeDate',
+      name: 'Expected Complete',
+      width: 200
+    }
 ];
 
-var Example = React.createClass({
-  render: function() {
-    return  (
-    <div>
-    <ReactDataGrid
-    columns={columns}
-    rowGetter={rowGetter}
-    rowsCount={_rows.length}
-    minHeight={500} />
-    </div>);
-  }
-});
-ReactDOM.render(<Example />, document.getElementById('app'));
+
+ReactDOM.render(<TableDatagrid columns={columns} rowGetter={rowGetter} rowsCount={_rows.length} minHeight={500} />, document.getElementById('app'));
