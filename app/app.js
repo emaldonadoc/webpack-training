@@ -10,7 +10,7 @@ function randomDate(start, end) {
 };
 
 var _rows = [];
-for (var i = 1; i < 1000; i++) {
+for (var i = 1; i < 30; i++) {
   _rows.push({
     id: i,
     task: 'Task ' + i,

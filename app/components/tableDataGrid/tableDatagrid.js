@@ -7,15 +7,20 @@ class TableDatagrid extends Component {
     super(props);
   }
 
+  showHide(){
+    console.log("show hide function");
+  }
+
   render(){
     return(
-        <div>
+      <div>
+        <button onClick={this.showHide} type="button" > Show/Hide</button>
         <ReactDataGrid
         columns={this.props.columns}
         rowGetter={this.props.rowGetter}
         rowsCount={this.props.rowsCount}
         minHeight={this.props.minHeight} />
-        </div>
+      </div>
     );
   }
 
