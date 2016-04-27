@@ -27,11 +27,7 @@ describe('Datagrid Spec',()=>{
   });
 
   it('render datagrid without elements', ()=>{
-    let columns = [
-        { key: 'id', name: 'ID', locked : true },
-        { key: 'task', name: 'Title', width: 200, locked : true },
-        { key: 'priority', name: 'Priority', width: 200 }
-    ];
+
     var datagrid = TestUtils.renderIntoDocument(
                           <TableDatagrid  columns={getColumns()}
                                           rowGetter={[]}
