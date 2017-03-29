@@ -6,7 +6,6 @@ describe('Datagrid Spec',()=>{
 
   it('render datagrid element',()=>{
     var datagrid = TestUtils.renderIntoDocument(<TableDatagrid />);
-
     expect(datagrid).toBeTruthy();
   });
 
