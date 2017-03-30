@@ -1,8 +1,9 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   context: __dirname + "/app",
   entry: {
-    javascript: "./app.js",
-    html: "./index.html",
+    javascript: "./app.js"
   },
   output: {
     filename: "app.js",
@@ -13,17 +14,21 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query:{
             presets:['es2015', 'react']
         }
       },
-      {
-        test: /\.html$/,
-        loader: "file?name=[name].[ext]",
-      },
        {
         test: /\.css$/,
         loader: "css-loader" ,
+     },
+     {
+       test: /\.less$/,
+       loader: "less-loader" // compiles Less to CSS
      }],
-    }}
+   },
+   plugins: [new HtmlWebpackPlugin({
+     template: __dirname + '/app/index.html'
+   })]
+ }
