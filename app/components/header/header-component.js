@@ -8,7 +8,7 @@ export default class Header extends Component {
   render(){
     return(
       <ul>
-        <li><a href="#" class="header-link"><span>Ki<strong>osk</strong></span></a></li>
+        <li><a href="#" className="header-link"><span>Ki<strong>osk</strong></span></a></li>
       </ul>
     );
   }

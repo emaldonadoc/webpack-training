@@ -1,5 +1,6 @@
 const normalize =  require("./styles/normalize.css")
 const skeleton = require("./styles/skeleton.css")
+const app = require("./styles/app.less")
 
 import React from "react"
 import ReactDom from "react-dom"
