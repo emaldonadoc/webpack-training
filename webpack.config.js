@@ -1,3 +1,4 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -21,14 +22,15 @@ module.exports = {
       },
        {
         test: /\.css$/,
-        loader: "css-loader" ,
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
      },
      {
        test: /\.less$/,
-       loader: "less-loader" // compiles Less to CSS
+       loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'less-loader' }) // compiles Less to CSS
      }],
    },
-   plugins: [new HtmlWebpackPlugin({
-     template: __dirname + '/app/index.html'
-   })]
+   plugins: [
+     new HtmlWebpackPlugin({template: __dirname + '/app/index.html'}),
+     new ExtractTextPlugin("styles.css")
+   ]
  }

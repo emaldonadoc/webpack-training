@@ -1,3 +1,6 @@
+const normalize =  require("./styles/normalize.css")
+const skeleton = require("./styles/skeleton.css")
+
 import React from "react"
 import ReactDom from "react-dom"
 import Header from "./components/header/header-component"
