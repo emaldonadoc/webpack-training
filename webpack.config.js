@@ -3,6 +3,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: __dirname + "/app",
+  devServer: {
+    inline:true,
+    port: 8888
+  },
   entry: {
     javascript: "./app.js"
   },
@@ -27,7 +31,11 @@ module.exports = {
      {
        test: /\.less$/,
        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'less-loader' }) // compiles Less to CSS
-     }],
+     },
+     {
+         test: /\.(jpe?g|gif|png)$/,
+         loader: 'file-loader?emitFile=false&name=[path][name].[ext]'
+      }],
    },
    plugins: [
      new HtmlWebpackPlugin({template: __dirname + '/app/index.html'}),
