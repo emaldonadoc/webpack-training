@@ -1,3 +1,5 @@
+const headerStyles = require("./header-styles.less");
+
 import React,{Component} from 'react';
 
 export default class Header extends Component {
