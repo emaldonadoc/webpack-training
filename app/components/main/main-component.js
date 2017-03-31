@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import Request from 'superagent'
 
 export default class Main extends Component {
   constructor(props){
@@ -21,6 +22,14 @@ export default class Main extends Component {
         </ul>
       </div>
     )
+  }
+
+  componentDidMount () {
+    Request.get('http://localhost:9999/people')
+      .end((err, data)=>{
+      console.log("Response from server", data )
+      this.setState(JSON.parse(data.text) )
+    })
   }
 
 }
