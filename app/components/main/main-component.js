@@ -27,7 +27,6 @@ export default class Main extends Component {
   componentDidMount () {
     Request.get('http://localhost:9999/people')
       .end((err, data)=>{
-      console.log("Response from server", data )
       this.setState(JSON.parse(data.text) )
     })
   }
