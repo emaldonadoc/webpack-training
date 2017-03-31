@@ -14,14 +14,4 @@ export default class Header extends Component {
       </ul>
     );
   }
-
-  componentWillMount (){
-    console.log("component Will mount before render");
-  }
-
-  componentDidMount (){
-    console.log("component Did mount before render");
-  }
-
-
 }

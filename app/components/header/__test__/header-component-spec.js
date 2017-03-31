@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import TestUtils from 'react/lib/ReactTestUtils';
-import TableDatagrid from '../tableDatagrid';
+import Header from '../tableDatagrid';
 
 describe('Datagrid Spec',()=>{
 
   it('render datagrid element',()=>{
-    var datagrid = TestUtils.renderIntoDocument(<TableDatagrid />);
+    var header = TestUtils.renderIntoDocument(<Header />);
     expect(datagrid).toBeTruthy();
   });
 
-  it('render datagrid with data', ()=>{
+  xit('render datagrid with data', ()=>{
 
     //given
     let data = [
