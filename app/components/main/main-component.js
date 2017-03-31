@@ -11,8 +11,8 @@ export default class Main extends Component {
 
   render(){
     let list = []
-    this.state.people.forEach( (person)=> {
-      list.push( <li>{person.firstName}, {person.lastName}</li>)
+    this.state.people.forEach( (person, i)=> {
+      list.push( <li key="{i}" className="person">{person.firstName}, {person.lastName}</li>)
     });
     return (
       <div>
