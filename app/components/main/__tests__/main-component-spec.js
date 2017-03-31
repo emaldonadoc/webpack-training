@@ -13,12 +13,12 @@ describe( 'Main Spec', () => {
 
   it('Main content update state ', () =>{
     let main = TestUtils.renderIntoDocument(<Main />);
-    let peopleData = {people:[{firstName:"death", lastName:"maldonado"}]};
+    let peopleData = {people:[{firstName:"death", lastName:"maldonado"},{firstName:"home", lastName:"home"}]};
 
     main.setState(peopleData);
 
     let people = TestUtils.scryRenderedDOMComponentsWithClass(main, 'person');
-    expect(people.length).toEqual(1);
+    expect(people.length).toEqual(2);
   });
 
 })
