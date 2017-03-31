@@ -30,7 +30,10 @@ module.exports = {
      },
      {
        test: /\.less$/,
-       loader: ExtractTextPlugin.extract({fallback: 'style-loader',use: "css-loader!less-loader",})
+       loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: "css-loader!less-loader",
+        })
      },
      {
          test: /\.(jpe?g|gif|png)$/,

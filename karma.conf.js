@@ -6,14 +6,14 @@ var webpack = require('webpack');
 
 module.exports = function (config) {
   config.set({
-    browsers: ['PhantomJS'], //run in Chrome
+    browsers: ['PhantomJS'], //run in PhantomJs
     singleRun: true, //just run once by default
     frameworks: [ 'jasmine' ], //use the mocha test framework
     files: [
       { pattern: 'tests.webpack.js', watched: false },
     ],
     preprocessors: {
-      'tests.webpack.js': 'webpack'  //preprocess with webpack and our sourcemap loader
+      'tests.webpack.js': 'webpack'
     },
     reporters: [ 'dots' ], //report results in this format
     webpack: {
@@ -43,6 +43,10 @@ module.exports = function (config) {
              loader: 'file-loader?emitFile=false&name=[path][name].[ext]'
           }],
        },
+       plugins: [
+         new HtmlWebpackPlugin({template: __dirname + '/app/index.html'}),
+         new ExtractTextPlugin("styles.css")
+       ],
       watch: true,
     },
     webpackServer: {
