@@ -9,9 +9,6 @@ describe( 'Main Spec', () => {
 
   beforeEach(function() {
     server = sinon.fakeServer.create();
-    server.respondWith("GET", "http://localhost:9999/people",
-                       [200, { "Content-Type": "application/json;charset=UTF-8" },
-                       '{"people":[{"firstName":"death", "lastName":"maldonado"},{"firstName":"home", "lastName":"home"}]']);
   });
 
   afterEach(function () {
@@ -19,14 +16,26 @@ describe( 'Main Spec', () => {
   });
 
   it('Main content with default state "people:[]"', () =>{
+    server.respondWith("GET", "http://localhost:9999/people", [
+        200,
+        {"Content-Type": "application/json"},
+        '{"people":[]}'
+    ]);
     let main = TestUtils.renderIntoDocument(<Main />);
+    server.respond();
     let people = TestUtils.scryRenderedDOMComponentsWithClass(main, 'person');
     expect(main).toBeTruthy();
     expect(people.length).toEqual(0);
   })
 
   it('Main content update state ', () =>{
+   server.respondWith("GET", "http://localhost:9999/people", [
+       200,
+       {"Content-Type": "application/json"},
+       '{"people":[{"firstName":"death", "lastName":"maldonado"},{"firstName":"home", "lastName":"home"}]}'
+   ]);
     let main = TestUtils.renderIntoDocument(<Main />);
+    server.respond();
     let people = TestUtils.scryRenderedDOMComponentsWithClass(main, 'person');
     expect(people.length).toEqual(2);
   });
